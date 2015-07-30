@@ -58,6 +58,15 @@ body {
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
+.homescr{
+     background-image: url("../img/bkgroad.jpg");/* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    height:90%;                   /* text area height */
+    width:100%; 
+    left: 0;
+	top: 0;/* text area width */
+    background-size: 100%;
+}
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {

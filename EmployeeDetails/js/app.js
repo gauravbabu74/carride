@@ -1,15 +1,27 @@
-angular.module('employeeDetailsApp', ['ionic'])
+angular.module('carRidingApp', ['ionic'])
 
 .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-     .state('employeelist', {
-         url: "/employeelist",
-         templateUrl: "templates/employeelist.html"
+     .state('mainpageview', {
+         url: "/mainpageview",
+         templateUrl: "templates/mainpageview.html"
       })
-    .state('employee', {
-        url: "/employee/:id",
-        templateUrl: "templates/employee.html"
+    .state('findaride', {
+        url: "/findaride",
+        templateUrl: "templates/findaride.html"
     })
-    $urlRouterProvider.otherwise('/employeelist');
+    .state('findarideGo', {
+        url: "/findarideGo",
+        templateUrl: "templates/findarideGo.html"
+    })
+    .state('findarideLeave', {
+        url: "/findarideLeave",
+        templateUrl: "templates/findarideLeave.html"
+    })
+    .state('offeraride', {
+        url: "/offeraride",
+        templateUrl: "templates/offeraride.html"
+    })
+    $urlRouterProvider.otherwise('/mainpageview');
        
 });

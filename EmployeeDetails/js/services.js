@@ -1,29 +1,18 @@
 (function () {
     'use strict';
 
-    var serviceId = 'employeeService';
-    angular.module('employeeDetailsApp').factory(serviceId, [employeeService]);
-
-    function employeeService() {
-       
-        var employeeList = [
-            { id:'1001', name: 'John', lastName: 'Theison', age: 32, Address: 'Towson,MD' },
-            { id: '1002', name: 'Scott', lastName: 'Weddle', age: 40, Address: 'Parkville,MD' },
-            { id: '1003', name: 'Adam', lastName: 'Sandler', age: 32, Address: 'Huntvalley,MD' }
-        ];
-
+    var serviceId = 'carService';
+    angular.module('carRidingApp').factory(serviceId, ['$http',carService]);
+	var CitiesData = [];
+    function carService($http,carService) {
+        $http.get("cities.json").success(function (data) {
+            CitiesData.push(data);
+        });
         function all() {
-            return employeeList;
-        }
-
-        function getEmployee(id) {
-            return _.find(employeeList, function (employee) {
-                return employee.id === id;
-            });
+            return CitiesData[0];
         }
         return {
-            all: all,
-            getEmployee:getEmployee
+            all: all
         }
     };
 })();
